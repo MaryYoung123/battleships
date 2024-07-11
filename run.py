@@ -102,3 +102,17 @@ def player_coordinate(player_board, occupied):
             print("Invalid input. Please enter a valid number.")
 
     return player_board, occupied
+
+def comp_coordinate(comp_board):
+    """
+    function for computer opponent.
+    """
+    for ship in ship_initial:
+        while True:
+            row = randrange(0, 10)
+            col = randrange(0, 10)
+            if comp_board[row][col] == "_":
+                comp_board[row][col] = ship
+                break
+
+    return comp_board
