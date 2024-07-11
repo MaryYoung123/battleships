@@ -1,3 +1,5 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+from random import randrange
+
+ship_initial = ["B", "C", "F", "A", "S"]
+ship_names = ["Battleship", "Cruiser", "Frigate", "Aircraft Carrier", "Sub"]
+map_size = 10
