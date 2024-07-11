@@ -152,3 +152,41 @@ def check_player_hit(comp_board, dummy_board, user):
         print("Missed me!")
 
     return hit
+
+def check_comp_hit(player_board):
+    """
+    function for computer hit or miss
+    """
+
+    hit = 1 
+
+    while True: 
+        row = randrange(0, 10)
+        col = randrange(0, 10)
+        if player_board[row][col] != "*" and player_board[row][col] != "a" and player_board[row][col] != "b" and comp_board[row][col] != "c" and comp_board[row][col] != "f" and comp_board[row][col] != "s":
+            break
+
+    print("Computer has selected coordinates", row, col)
+
+    if player_board[row][col] == "B":
+        player_board[row][col] = "b"
+        print("Player: Battleship been hit!")
+    elif player_board[row][col] == "C":
+        player_board[row][col] = "c"
+        print("Player: Cruiser been hit!")
+    elif player_board[row][col] == "F":
+        player_board[row][col] = "f"
+        print("Player: Frigate been hit!")
+        hit = 1
+    elif player_board[row][col] == "A":
+        player_board[row][col] = "a"
+        print("Player: Aircraft carrier been hit!")
+    elif player_board[row][col] == "S":
+        player_board[row][col] = "s"
+        print("Player: Sub been hit!")
+    else:
+        hit = 0 
+        print("Missed me!")
+        player_board[row][col] = "*"
+
+    return hit
