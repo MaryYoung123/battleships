@@ -15,3 +15,17 @@ def get_username():
             return user_name
         else:
             print("Please enter your name!")
+
+
+def create_battlefield(map_size):
+    """
+    function to create the battlefield size
+    """
+    return [["_"] * map_size for _ in range(map_size)]
+
+def display_battlefield(board):
+    """
+    function to display current state of the map.
+    """
+    for row in board:
+        print(" ".join(row))
