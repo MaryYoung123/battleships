@@ -122,9 +122,17 @@ def check_player_hit(comp_board, dummy_board, user):
     Function for player hit or miss
     """
     print(user)
-    row = int(input("Enter your row: "))
-    col = int(input("Enter your col: "))
-    hit = 1
+
+    while True:
+        try:
+            row = int(input("Enter your row: "))
+            col = int(input("Enter your col: "))
+            hit = 1
+            if row < 0 or row > 10 or col < 0 or col > 10:
+                raise ValueError
+            break
+        except ValueError:
+            print("Invalid number. The number must be in the range of 0-10.")
 
     if comp_board[row][col] == "B":
         comp_board[row][col] = "b"
