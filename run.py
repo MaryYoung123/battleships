@@ -116,3 +116,39 @@ def comp_coordinate(comp_board):
                 break
 
     return comp_board
+
+def check_player_hit(comp_board, dummy_board, user):
+    """
+    Function for player hit or miss
+    """
+    print(user)
+    row = int(input("Enter your row: "))
+    col = int(input("Enter your col: "))
+    hit = 1
+
+    if comp_board[row][col] == "B":
+        comp_board[row][col] = "b"
+        dummy_board[row][col] = "X"
+        print("Computer: Battleship been hit!")
+    elif comp_board[row][col] == "C":
+        comp_board[row][col] = "c"
+        dummy_board[row][col] = "X"
+        print("Computer: Cruiser been hit!")
+    elif comp_board[row][col] == "F":
+        comp_board[row][col] = "f"
+        dummy_board[row][col] = "X"
+        print("Computer: Frigate been hit!")
+    elif comp_board[row][col] == "A":
+        comp_board[row][col] = "a"
+        dummy_board[row][col] = "X"
+        print("Computer: Aircraft Carrier been hit!")
+    elif comp_board[row][col] == "S":
+        comp_board[row][col] = "s"
+        dummy_board[row][col] = "X"
+        print("Computer: Sub been hit!")
+    else:
+        dummy_board[row][col] = "*"
+        hit = 0 
+        print("Missed me!")
+
+    return hit
