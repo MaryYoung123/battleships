@@ -60,6 +60,8 @@ Remaining bugs:
 * Pep8
   * No errors were returned from pep8online.com
 
+  ![pep8](linter.png)
+
 
 ### Deployment
 
