@@ -1,3 +1,4 @@
+
 from random import randrange
 
 ship_initial = ["B", "C", "F", "A", "S"]
@@ -177,10 +178,8 @@ def check_comp_hit(player_board):
     while True:
         row = randrange(0, 10)
         col = randrange(0, 10)
-        if player_board[row][col] != "*" and player_board[row][col]
-        != "a" and player_board[row][col] != "b" and comp_board[row][col]
-        != "c" and comp_board[row][col] != "f" and comp_board[row][col] != "s":
-            break
+        if player_board[row][col] != "*" and player_board[row][col] != "a" and player_board[row][col] != "b" and comp_board[row][col]  != "c" and comp_board[row][col] != "f" and comp_board[row][col] != "s":
+                break
 
     print("Computer has selected coordinates", row, col)
 
@@ -233,17 +232,17 @@ while True:
     player_hits += check_player_hit(comp_board, dummy_board, user)
     if player_hits == 5:
         print(f"{user_name} has won - game over")
-break
-
-comp_hits += check_comp_hit(player_board)
-if comp_hits == 5:
-    print("Computer has won - game over")
     break
 
-    print(f"Player {user} board")
-    display_battlefield(player_board)
+    comp_hits += check_comp_hit(player_board)
+    if comp_hits == 5:
+        print("Computer has won - game over")
+    break
 
-    print(" ")
+print(f"Player {user} board")
+display_battlefield(player_board)
 
-    print("Computer board")
-    display_battlefield(dummy_board)
+print(" ")
+
+print("Computer board")
+display_battlefield(dummy_board)
